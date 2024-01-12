@@ -1,5 +1,6 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="column items-center justify-center">
+    <dashboard-component />
     <example-component
       title="Example component"
       active
@@ -12,12 +13,13 @@
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
+import DashboardComponent from 'components/DashboardComponent.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
-  setup () {
+  components: { ExampleComponent, DashboardComponent },
+  setup() {
     const todos = ref<Todo[]>([
       {
         id: 1,
