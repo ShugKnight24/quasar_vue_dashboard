@@ -1,8 +1,13 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <q-card v-for="(item, index) in data" :key="index" flat bordered>
+  <div class="row q-gutter-md items-start justify-center dashboard-container">
+    <q-card
+      v-for="(item, index) in data"
+      :key="index"
+      bordered
+      class="col-xs-12 col-sm-6 col-md-4"
+    >
       <q-card-section>
-        <div class="text-h4">{{ item.title }}</div>
+        <div class="text-h4 q-mb-sm">{{ item.title }}</div>
         <div class="text-body2">{{ item.description }}</div>
       </q-card-section>
       <q-card-actions align="right" class="bg-primary text-warning">
@@ -10,7 +15,7 @@
         <q-btn class="text-weight-bold" flat label="Action" />
       </q-card-actions>
     </q-card>
-  </q-page>
+  </div>
 </template>
 
 <script lang="ts">
@@ -55,3 +60,24 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss">
+.dashboard-container {
+  margin: 1rem 0;
+
+  .q-card {
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    .q-card-actions {
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+</style>

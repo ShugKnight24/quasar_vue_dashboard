@@ -1,17 +1,14 @@
 <template>
-  <q-page class="column items-center justify-center">
-    <dashboard-component />
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <q-layout>
+    <q-page-container class="column items-center justify-center width-100">
+      <dashboard-component />
+      <example-component active :todos="todos"></example-component>
+    </q-page-container>
+  </q-layout>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
+import { Todo } from 'components/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
 import DashboardComponent from 'components/DashboardComponent.vue';
 import { defineComponent, ref } from 'vue';
@@ -72,10 +69,7 @@ export default defineComponent({
         completed: false,
       },
     ]);
-    const meta = ref<Meta>({
-      totalCount: 1200,
-    });
-    return { todos, meta };
+    return { todos };
   },
 });
 </script>

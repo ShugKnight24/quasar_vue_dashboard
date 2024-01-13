@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ title }}</p>
+    <h2>Learning ToDos:</h2>
     <ul>
       <li
         v-for="todo in todos"
@@ -11,15 +11,15 @@
         {{ todo.id }} - {{ todo.content }}
       </li>
     </ul>
-    <p>Count: {{ todoCount }} / {{ meta.totalCount }}</p>
-    <p :class="{ active: active }">Active: {{ active ? 'yes' : 'no' }}</p>
+    <p>Count: {{ todoCount }}</p>
+    <p :class="{ active }">Active: {{ active ? 'yes' : 'no' }}</p>
     <p>Clicks on todos: {{ clickCount }}</p>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, computed, ref, toRef, Ref } from 'vue';
-import { Todo, Meta } from './models';
+import { Todo } from './models';
 
 function useClickCount() {
   const clickCount = ref(0);
@@ -44,17 +44,9 @@ function useDisplayTodo(todos: Ref<Todo[]>) {
 export default defineComponent({
   name: 'ExampleComponent',
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
     todos: {
       type: Array as PropType<Todo[]>,
       default: () => [],
-    },
-    meta: {
-      type: Object as PropType<Meta>,
-      required: true,
     },
     active: {
       type: Boolean,
@@ -67,17 +59,28 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-li {
-  color: $positive;
-  &.active {
-    color: $negative;
-  }
-  &.completed {
-    text-decoration: line-through;
-  }
-  &:hover {
-    color: $primary;
-    cursor: pointer;
+h2 {
+  color: $primary;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+
+  li {
+    color: $positive;
+    &.active {
+      color: $negative;
+    }
+    &.completed {
+      text-decoration: line-through;
+    }
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
   }
 }
 </style>
