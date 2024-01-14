@@ -12,7 +12,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
-import { MockLineChartData } from './models';
+import { MockLineChartData } from '../models';
 
 // TODO: Make this generic so that it can be used for any data
 export default defineComponent({
@@ -21,7 +21,7 @@ export default defineComponent({
     apexchart: VueApexCharts,
   },
   setup() {
-    const lineData = ref<MockLineChartData>([
+    const lineData = ref<MockLineChartData[]>([
       {
         name: 'add-by-15',
         data: [0, 15, 30, 45, 60, 75, 90, 105, 120],
@@ -77,7 +77,7 @@ export default defineComponent({
       },
       tooltip: {
         x: {
-          formatter: function (value) {
+          formatter: function (value: number) {
             return 'Index: ' + value;
           },
         },
