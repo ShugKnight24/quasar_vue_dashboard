@@ -3,6 +3,11 @@ export interface DashboardData {
   description: string;
 }
 
+export interface MockLineChartData {
+  name: string;
+  data: number[];
+}
+
 export interface Todo {
   id: number;
   content: string;

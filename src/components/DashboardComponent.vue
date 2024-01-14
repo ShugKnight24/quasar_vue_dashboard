@@ -16,16 +16,20 @@
       </q-card-actions>
     </q-card>
   </div>
+  <div class="charts-container column q-gutter-sm items-center justify-center">
+    <line-chart />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { QCard, QCardSection, QCardActions, QBtn } from 'quasar';
 import { DashboardData } from './models';
+import LineChart from './Charts/LineChart.vue';
 
 export default defineComponent({
   name: 'DashboardView',
-  components: { QCard, QCardSection, QCardActions, QBtn },
+  components: { LineChart, QCard, QCardSection, QCardActions, QBtn },
   setup() {
     const data = ref<DashboardData[]>([
       {
@@ -78,6 +82,12 @@ export default defineComponent({
     .q-card-actions {
       padding: 0.5rem 1rem;
     }
+  }
+}
+.charts-container {
+  #line-chart {
+    min-width: 650px;
+    max-width: 1000px;
   }
 }
 </style>
