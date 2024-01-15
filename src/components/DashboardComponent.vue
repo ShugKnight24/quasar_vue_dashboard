@@ -18,9 +18,7 @@
   </div>
   <div class="charts-container column q-gutter-sm items-center justify-center">
     <apex-charts />
-    <div class="chartsjs-charts">
-      <h2>Charts.js Charts</h2>
-      <charts-line-chart />
+    <chart-js />
     </div>
   </div>
 </template>
@@ -32,13 +30,13 @@ import { DashboardData } from './models';
 // Apex Charts
 import ApexCharts from './Charts/Apex/ApexCharts.vue';
 // Charts.js Charts
-import ChartsLineChart from './Charts/Charts/ChartsLineChart.vue';
+import ChartJs from './Charts/Chartjs/ChartJs.vue';
 
 export default defineComponent({
   name: 'DashboardView',
   components: {
     ApexCharts,
-    ChartsLineChart,
+    ChartJs,
     QCard,
     QCardSection,
     QCardActions,
@@ -96,12 +94,6 @@ export default defineComponent({
     .q-card-actions {
       padding: 0.5rem 1rem;
     }
-  }
-}
-.charts-container {
-  #charts-line-chart,
-    min-width: 650px;
-    max-width: 1000px;
   }
 }
 </style>

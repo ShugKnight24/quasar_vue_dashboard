@@ -1,5 +1,5 @@
 <template>
-  <ChartsLine id="charts-line-chart" :data="data" :options="options" />
+  <LineChart id="c-line-chart" :data="data" :options="options" />
 </template>
 
 <script lang="ts">
@@ -13,8 +13,8 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Line as ChartsLine } from 'vue-chartjs';
-import { lineChartData } from 'src/Data/lineChartData';
+import { Line as LineChart } from 'vue-chartjs';
+import { lineChartData } from '../../../Data/lineChartData';
 import { defineComponent } from 'vue';
 
 const colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0'];
@@ -49,9 +49,9 @@ ChartJS.register(
 );
 
 export default defineComponent({
-  name: 'ChartsLineChart',
+  name: 'CLineChart',
   components: {
-    ChartsLine,
+    LineChart,
   },
   data() {
     return {
