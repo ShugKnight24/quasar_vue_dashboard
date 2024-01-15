@@ -15,7 +15,7 @@ import VueApexCharts from 'vue3-apexcharts';
 import { MockHeatMapData } from '../../models';
 
 export default defineComponent({
-  name: 'HeatmapChart',
+  name: 'HeatMap',
   components: {
     apexchart: VueApexCharts,
   },

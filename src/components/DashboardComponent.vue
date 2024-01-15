@@ -17,12 +17,7 @@
     </q-card>
   </div>
   <div class="charts-container column q-gutter-sm items-center justify-center">
-    <div class="apex-charts">
-      <h2>Apex Charts</h2>
-      <apex-line-chart />
-      <radial-bar-chart />
-      <heat-map-chart />
-    </div>
+    <apex-charts />
     <div class="chartsjs-charts">
       <h2>Charts.js Charts</h2>
       <charts-line-chart />
@@ -35,23 +30,19 @@ import { defineComponent, ref } from 'vue';
 import { QCard, QCardSection, QCardActions, QBtn } from 'quasar';
 import { DashboardData } from './models';
 // Apex Charts
-import ApexLineChart from './Charts/Apex/ApexLineChart.vue';
-import RadialBarChart from './Charts/Apex/RadialBarChart.vue';
-import HeatMapChart from './Charts/Apex/HeatMapChart.vue';
+import ApexCharts from './Charts/Apex/ApexCharts.vue';
 // Charts.js Charts
 import ChartsLineChart from './Charts/Charts/ChartsLineChart.vue';
 
 export default defineComponent({
   name: 'DashboardView',
   components: {
-    ApexLineChart,
+    ApexCharts,
     ChartsLineChart,
-    HeatMapChart,
     QCard,
     QCardSection,
     QCardActions,
     QBtn,
-    RadialBarChart,
   },
   setup() {
     const data = ref<DashboardData[]>([
@@ -109,9 +100,6 @@ export default defineComponent({
 }
 .charts-container {
   #charts-line-chart,
-  #heat-map-chart,
-  #line-chart,
-  #radialbar-chart {
     min-width: 650px;
     max-width: 1000px;
   }

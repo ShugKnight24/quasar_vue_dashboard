@@ -1,7 +1,7 @@
 <template>
   <div>
     <apexchart
-      id="radialbar-chart"
+      id="radial-bar-chart"
       type="radialBar"
       :options="chartOptions"
       :series="series"
@@ -14,7 +14,7 @@ import { defineComponent, ref } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 
 export default defineComponent({
-  name: 'RadialBarChart',
+  name: 'RadialBar',
   components: {
     apexchart: VueApexCharts,
   },
@@ -46,7 +46,7 @@ export default defineComponent({
         floating: false,
         fontSize: '16px',
         position: 'right',
-        offsetX: 60,
+        offsetX: 0,
       },
       labels: ['Vue3', 'TypeScript', 'SCSS', 'ApexCharts', 'Pinia'],
       title: {

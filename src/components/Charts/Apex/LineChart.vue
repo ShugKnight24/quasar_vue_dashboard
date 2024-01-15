@@ -17,7 +17,7 @@ import { lineChartData } from '../../../Data/lineChartData';
 
 // TODO: Make this generic so that it can be used for any dataset and update the UI accordingly
 export default defineComponent({
-  name: 'ApexLineChart',
+  name: 'LineChart',
   components: {
     apexchart: VueApexCharts,
   },
