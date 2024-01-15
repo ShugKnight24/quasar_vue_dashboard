@@ -26,7 +26,7 @@ export default defineComponent({
       {
         id: 2,
         content: 'Add Graphs and Charts to the Dashboard',
-        completed: false,
+        completed: true,
       },
       {
         id: 3,

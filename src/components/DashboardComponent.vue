@@ -19,6 +19,7 @@
   <div class="charts-container column q-gutter-sm items-center justify-center">
     <line-chart />
     <radial-bar-chart />
+    <heat-map-chart />
   </div>
 </template>
 
@@ -28,10 +29,12 @@ import { QCard, QCardSection, QCardActions, QBtn } from 'quasar';
 import { DashboardData } from './models';
 import LineChart from './Charts/LineChart.vue';
 import RadialBarChart from './Charts/RadialBarChart.vue';
+import HeatMapChart from './Charts/HeatMapChart.vue';
 
 export default defineComponent({
   name: 'DashboardView',
   components: {
+    HeatMapChart,
     LineChart,
     QCard,
     QCardSection,
@@ -94,6 +97,7 @@ export default defineComponent({
   }
 }
 .charts-container {
+  #heat-map-chart,
   #line-chart,
   #radialbar-chart {
     min-width: 650px;
