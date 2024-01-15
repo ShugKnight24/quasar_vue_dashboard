@@ -17,9 +17,11 @@
     </q-card>
   </div>
   <div class="charts-container column q-gutter-sm items-center justify-center">
-    <line-chart />
-    <radial-bar-chart />
-    <heat-map-chart />
+    <div class="apex-charts">
+      <apex-line-chart />
+      <radial-bar-chart />
+      <heat-map-chart />
+    </div>
   </div>
 </template>
 
@@ -27,15 +29,16 @@
 import { defineComponent, ref } from 'vue';
 import { QCard, QCardSection, QCardActions, QBtn } from 'quasar';
 import { DashboardData } from './models';
-import LineChart from './Charts/LineChart.vue';
-import RadialBarChart from './Charts/RadialBarChart.vue';
-import HeatMapChart from './Charts/HeatMapChart.vue';
+// Apex Charts
+import ApexLineChart from './Charts/Apex/ApexLineChart.vue';
+import RadialBarChart from './Charts/Apex/RadialBarChart.vue';
+import HeatMapChart from './Charts/Apex/HeatMapChart.vue';
 
 export default defineComponent({
   name: 'DashboardView',
   components: {
+    ApexLineChart,
     HeatMapChart,
-    LineChart,
     QCard,
     QCardSection,
     QCardActions,

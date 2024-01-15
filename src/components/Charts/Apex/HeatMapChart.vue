@@ -12,7 +12,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
-import { MockHeatMapData } from '../models';
+import { MockHeatMapData } from '../../models';
 
 export default defineComponent({
   name: 'HeatmapChart',
