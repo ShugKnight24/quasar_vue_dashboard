@@ -14,7 +14,7 @@ import { defineComponent, ref } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 import { MockLineChartData } from '../models';
 
-// TODO: Make this generic so that it can be used for any data
+// TODO: Make this generic so that it can be used for any dataset and update the UI accordingly
 export default defineComponent({
   name: 'LineChart',
   components: {
@@ -75,11 +75,10 @@ export default defineComponent({
         },
         offsetY: 10,
       },
-      tooltip: {
-        x: {
-          formatter: function (value: number) {
-            return 'Index: ' + value;
-          },
+      xaxis: {
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        title: {
+          text: 'Current data array index',
         },
       },
     });
