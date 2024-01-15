@@ -18,6 +18,7 @@
   </div>
   <div class="charts-container column q-gutter-sm items-center justify-center">
     <line-chart />
+    <radial-bar-chart />
   </div>
 </template>
 
@@ -26,10 +27,18 @@ import { defineComponent, ref } from 'vue';
 import { QCard, QCardSection, QCardActions, QBtn } from 'quasar';
 import { DashboardData } from './models';
 import LineChart from './Charts/LineChart.vue';
+import RadialBarChart from './Charts/RadialBarChart.vue';
 
 export default defineComponent({
   name: 'DashboardView',
-  components: { LineChart, QCard, QCardSection, QCardActions, QBtn },
+  components: {
+    LineChart,
+    QCard,
+    QCardSection,
+    QCardActions,
+    QBtn,
+    RadialBarChart,
+  },
   setup() {
     const data = ref<DashboardData[]>([
       {
@@ -85,7 +94,8 @@ export default defineComponent({
   }
 }
 .charts-container {
-  #line-chart {
+  #line-chart,
+  #radialbar-chart {
     min-width: 650px;
     max-width: 1000px;
   }
