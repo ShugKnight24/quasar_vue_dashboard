@@ -47,11 +47,12 @@ export default defineComponent({
         fontSize: '16px',
         position: 'right',
         offsetX: 0,
+        offsetY: 60,
       },
       labels: ['Vue3', 'TypeScript', 'SCSS', 'ApexCharts', 'Pinia'],
       title: {
-        text: 'Project Skills',
-        align: 'top',
+        text: 'Current Project Skills',
+        align: 'center',
         style: {
           fontSize: '18px',
           fontWeight: 'bold',

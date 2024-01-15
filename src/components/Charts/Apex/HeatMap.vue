@@ -48,7 +48,14 @@ export default defineComponent({
       },
       colors: ['#008FFB', '#00E396', '#FEB019', '#FF4560'],
       title: {
-        text: 'HeatMap Chart',
+        text: 'Site Vistors - Heat Map Data',
+        align: 'center',
+        style: {
+          fontSize: '18px',
+          fontWeight: 'bold',
+          fontFamily: 'Roboto',
+          color: '#263238',
+        },
       },
       xaxis: {
         categories: [
