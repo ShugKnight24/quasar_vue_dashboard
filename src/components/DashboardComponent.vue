@@ -1,21 +1,5 @@
 <template>
-  <div class="row q-gutter-md items-start justify-center dashboard-container">
-    <q-card
-      v-for="(item, index) in data"
-      :key="index"
-      bordered
-      class="col-xs-12 col-sm-6 col-md-4"
-    >
-      <q-card-section>
-        <div class="text-h4 q-mb-sm">{{ item.title }}</div>
-        <div class="text-body2">{{ item.description }}</div>
-      </q-card-section>
-      <q-card-actions align="right" class="bg-primary text-warning">
-        <!-- TODO: Add Different kinds of actions -->
-        <q-btn class="text-weight-bold" flat label="Action" />
-      </q-card-actions>
-    </q-card>
-  </div>
+  <dashboard-card :data="data" class="col-12 col-sm-6 col-md-4" />
   <div class="charts-container column q-gutter-sm items-center justify-center">
     <apex-charts />
     <chart-js />
@@ -25,22 +9,19 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { QCard, QCardSection, QCardActions, QBtn } from 'quasar';
 import { DashboardData } from './models';
 // Apex Charts
 import ApexCharts from './Charts/Apex/ApexCharts.vue';
 // Charts.js Charts
 import ChartJs from './Charts/Chartjs/ChartJs.vue';
+import DashboardCard from './DashboardCard.vue';
 
 export default defineComponent({
   name: 'DashboardView',
   components: {
     ApexCharts,
     ChartJs,
-    QCard,
-    QCardSection,
-    QCardActions,
-    QBtn,
+    DashboardCard,
   },
   setup() {
     const data = ref<DashboardData[]>([
