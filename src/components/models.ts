@@ -1,6 +1,8 @@
 export interface DashboardData {
   title: string;
   description: string;
+  completed: boolean | null | 'in-progress';
+  notes?: string;
 }
 
 export interface MockHeatMapData {
