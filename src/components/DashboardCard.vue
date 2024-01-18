@@ -35,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import { DashboardData } from './models';
 
 const props = defineProps<{ data: DashboardData[] }>();
