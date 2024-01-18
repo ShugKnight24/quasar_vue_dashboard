@@ -1,5 +1,5 @@
 <template>
-  <dashboard-card :data="data" class="col-12 col-sm-6 col-md-4" />
+  <DashboardCard :data="data" class="col-12 col-sm-6 col-md-4" />
   <div class="charts-container column q-gutter-sm items-center justify-center">
     <apex-charts />
     <chart-js />
