@@ -1,7 +1,9 @@
+export type DashboardDataCompleted = boolean | 'in-progress' | null;
+
 export interface DashboardData {
   title: string;
   description: string;
-  completed: boolean | null | 'in-progress';
+  completed: DashboardDataCompleted;
   notes?: string;
 }
 

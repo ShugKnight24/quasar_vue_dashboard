@@ -18,7 +18,7 @@
         </div>
       </q-card-section>
       <q-card-actions
-        align="right"
+        align="left"
         :class="{
           'bg-positive': item.completed === true,
           'bg-negative': item.completed === false,
@@ -27,15 +27,41 @@
         }"
         class="text-white text-weight-bold"
       >
-        <!-- TODO: Add Different kinds of actions -->
-        <q-btn class="text-weight-bold" flat label="Action" />
+        <q-btn
+          class="text-weight-bold"
+          flat
+          label="Set True"
+          @click="setCompleted(item, true)"
+        />
+        <q-btn
+          class="text-weight-bold"
+          flat
+          label="Set False"
+          @click="setCompleted(item, false)"
+        />
+        <q-btn
+          class="text-weight-bold"
+          flat
+          label="Set Null"
+          @click="setCompleted(item, null)"
+        />
+        <q-btn
+          class="text-weight-bold"
+          flat
+          label="Set In-Progress"
+          @click="setCompleted(item, 'in-progress')"
+        />
       </q-card-actions>
     </q-card>
   </div>
 </template>
 
 <script setup lang="ts">
-import { DashboardData } from './models';
+import { DashboardData, DashboardDataCompleted } from './models';
 
 const props = defineProps<{ data: DashboardData[] }>();
+
+const setCompleted = (item: DashboardData, value: DashboardDataCompleted) => {
+  item.completed = value;
+};
 </script>

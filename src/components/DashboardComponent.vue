@@ -35,7 +35,7 @@ export default defineComponent({
   margin: 1rem 0;
 
   .q-card {
-    max-width: 400px;
+    max-width: 450px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform box-shadow 0.3s ease;
 
