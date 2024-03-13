@@ -1,6 +1,3 @@
-<!-- Connect to the router and have different pages..? -->
-<!-- Create a UI that allows you to move from the charts / graphs / to CRUD Table... -->
-<!-- Look at the old PHP CRUD app you made a long time ago -->
 <template>
   <q-item clickable tag="a" target="_blank" :href="link">
     <q-item-section v-if="icon" avatar>
