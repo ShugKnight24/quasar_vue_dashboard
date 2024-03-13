@@ -26,6 +26,9 @@
           :key="link.title"
           v-bind="link"
         />
+        <q-item clickable tag="a" :to="{ path: '/' }">
+          <q-item-section>Home</q-item-section>
+        </q-item>
         <q-item clickable tag="a" :to="{ path: '/ag' }">
           <q-item-section>AG Grid</q-item-section>
         </q-item>
