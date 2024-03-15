@@ -7,7 +7,6 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
   {
-    name: 'ag-grid',
     path: '/ag',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -15,7 +14,6 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    name: 'high-charts',
     path: '/high',
     component: () => import('layouts/MainLayout.vue'),
     children: [
