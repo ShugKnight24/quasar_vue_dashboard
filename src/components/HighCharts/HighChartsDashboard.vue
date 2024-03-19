@@ -8,6 +8,7 @@ import Highcharts from 'highcharts';
 import Dashboards from '@highcharts/dashboards';
 import DataGrid from '@highcharts/dashboards/datagrid';
 import LayoutModule from '@highcharts/dashboards/modules/layout';
+import { Config } from '../models';
 
 LayoutModule(Dashboards);
 Dashboards.HighchartsPlugin.custom.connectHighcharts(Highcharts);
@@ -15,7 +16,7 @@ Dashboards.DataGridPlugin.custom.connectDataGrid(DataGrid);
 Dashboards.PluginHandler.addPlugin(Dashboards.HighchartsPlugin);
 Dashboards.PluginHandler.addPlugin(Dashboards.DataGridPlugin);
 
-const dashboardConfig = {
+const dashboardConfig: Config = {
   dataPool: {
     connectors: [
       {
