@@ -3,7 +3,6 @@
   <div class="charts-container column q-gutter-sm items-center justify-center">
     <apex-charts />
     <chart-js />
-    </div>
   </div>
 </template>
 
