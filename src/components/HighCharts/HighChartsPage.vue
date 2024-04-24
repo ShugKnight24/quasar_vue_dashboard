@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h2>Dashboard</h2>
-    <highcharts-dashboard />
+    <HighchartsDashboard />
   </div>
 </template>
 
