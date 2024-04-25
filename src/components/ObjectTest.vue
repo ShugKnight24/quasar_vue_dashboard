@@ -74,6 +74,7 @@ Object.defineProperties(testObject, {
       console.log(
         `I'm a getter, and I'm returning the value ${realGetterSetterValue}`
       );
+      return realGetterSetterValue;
     },
     set(newValue) {
       // Overrides default setter
