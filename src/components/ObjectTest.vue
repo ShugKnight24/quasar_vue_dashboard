@@ -52,7 +52,7 @@ const testObject: TestObject = {
 };
 console.log('testObject', testObject);
 
-const realGetterSetterValue = "I'm the real value";
+let realGetterSetterValue = "I'm the real value";
 Object.defineProperties(testObject, {
   newProperty: {
     // Won't show up in for...in loops
@@ -81,6 +81,7 @@ Object.defineProperties(testObject, {
       if (newValue === "I'm a setter") {
         console.log(`I'm a setter, and I'm setting the value to ${newValue}`);
       }
+      realGetterSetterValue = newValue;
     },
   },
 });
