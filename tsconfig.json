@@ -1,6 +1,14 @@
 {
   "extends": "@quasar/app-vite/tsconfig-preset",
   "compilerOptions": {
-    "baseUrl": "."
-  }
+    "baseUrl": ".",
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "types": ["cypress"],
+    "esModuleInterop": true,
+    "allowJs": true
+  },
+  "include": ["src/**/*", "__test__/**/*.ts", "cypress/**/*.ts"],
+  "exclude": ["node_modules"]
 }
