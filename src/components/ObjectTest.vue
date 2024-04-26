@@ -30,15 +30,7 @@
   </div>
 </template>
 <script setup lang="ts">
-interface TestObject {
-  blurb: string;
-  location?: string;
-  getterSetter: string;
-  name: Record<number, string>;
-  newProperty?: {
-    value: number[];
-  };
-}
+import { TestObject } from './models';
 
 const testObject: TestObject = {
   name: {
@@ -64,7 +56,7 @@ Object.defineProperties(testObject, {
     configurable: false,
   },
   blurb: {
-    // Can assign to the property, but it won't be changed. Will error
+    // Can't assign to the property, will error
     writable: false,
   },
   getterSetter: {

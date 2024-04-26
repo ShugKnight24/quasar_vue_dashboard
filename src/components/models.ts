@@ -96,8 +96,20 @@ interface Row {
   cells: Cell[];
 }
 
+export interface TestObject {
+  blurb: string;
+  location?: string;
+  getterSetter: string;
+  name: Record<number, string>;
+  newProperty?: {
+    value: number[];
+  };
+}
+
 export interface Todo {
   id: number;
   content: string;
   completed: boolean;
 }
+
+export type UpdateFunction = () => void;

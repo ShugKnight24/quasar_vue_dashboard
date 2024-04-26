@@ -10,8 +10,7 @@
   </div>
 </template>
 <script setup lang="ts">
-// Avoid using the Function type
-type UpdateFunction = () => void;
+import { UpdateFunction } from './models';
 
 class DependencyTracker {
   dependents: Set<UpdateFunction>;
