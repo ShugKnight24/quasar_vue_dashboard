@@ -24,6 +24,7 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#usage
     // ESLint typescript rules
     'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
 
     // Uncomment any of the lines below to choose desired strictness,
     // but leave only one uncommented!
@@ -38,9 +39,36 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['./src/__tests__/**/*'],
+      // Jest Test Files
+      files: [
+        './__tests__/**/*.{js,jsx,ts,tsx}',
+        '**/*.test.{js,jsx,ts,tsx}',
+        '**/*.spec.{js,jsx,ts,tsx}',
+      ],
       env: {
         jest: true,
+        'cypress/globals': false, // Disable Cypress for Jest files
+      },
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+      rules: {
+        // Jest-specific rules or overrides
+      },
+    },
+    {
+      // Cypress Test files
+      files: ['test/cypress/**/*.{js,jsx,ts,tsx}', '**/*.cy.{js,jsx,ts,tsx}'],
+      env: {
+        jest: false, // disable Jest for Cypress files
+        'cypress/globals': true,
+      },
+      plugins: ['cypress'],
+      extends: ['plugin:cypress/recommended'],
+      rules: {
+        // Cypress-specific rules or overrides
+        'jest/expect-expect': 'off',
+        'jest/valid-expect': 'off',
+        'jest/no-identical-title': 'off',
       },
     },
   ],

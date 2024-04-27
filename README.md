@@ -18,6 +18,9 @@ Learning Quasar, Vue 3, & Pinia. Testing libraries like Apex Charts, Charts.js, 
 6. Learn about Pinia and best practices when creating stores, pulling and modifying data, etc.
 7. Routing and page transitions in Vue & Quasar
 8. Currently a SPA, look at other setups like SSR, PWA, etc.
+9. Resolve babel and quasar jest app extension component testing issues
+
+- Have to run babel async
 
 ## Bugs
 
@@ -69,14 +72,47 @@ quasar build
 
 ## Testing the application
 
-- Add tests to the `src/__test__` directory
+- Add tests to the `__test__` directory or the `src/test` folder based off the testing library you're using
+
+- Currently set to handle unit tests w/ `jest` & `vitest`
+
+  - Note: jest environment is slightly messed up due to using quasar jest app extension and regular jest. Would likely scrap in a real example though many orgs still rely on jest for testing and will be a good learning exercise
+    - Still to resolve some babel issues, but can run regular jest through the `__test__` dir and quasar jest component tests through `src/test/jest/__tests__`
+
+- Setup for both e2e & component testing w/ Cypress
 
 ### Running Tests
 
+### Jest
+
 ```bash
-yarn test
+yarn test:jest
 # or
-npm test
+npm test:jest
+```
+
+### Cypress
+
+```bash
+yarn test:cypress
+# or
+npm test:cypress
+```
+
+Using these commands will open the cypress GUI
+
+```bash
+yarn test:cypress:open
+# or
+npm test:cypress:open
+```
+
+### Vitest
+
+```bash
+yarn test:vitest
+# or
+npm test:vitest
 ```
 
 ## Customize the configuration
