@@ -25,7 +25,8 @@ export default {
     ],
   },
   testMatch: [
-    '**/__test__/**/*.js?(x)', // Matches .js and .jsx files
-    '**/__test__/**/*.ts?(x)', // Matches .ts and .tsx files
+    '**/__test__/**/*.js?(x)',
+    '**/__test__/**/*.ts?(x)',
+    // '**/test/jest/**/*.[jt]s?(x)', // Resolve babel issues then include
   ],
 };
