@@ -6,22 +6,20 @@
   "author": "Shugmi Shumunov <SShumunov@gmail.com>",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.ts,.vue ./",
+    "build": "quasar build",
+    "dev": "quasar dev",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "lint": "eslint --ext .js,.ts,.vue ./",
     "test:cypress": "cypress run --config video=false --component",
     "test:cypress:open": "npx cypress open",
     "test:cypress:cache-clear": "npx cypress cache clear",
     "test:jest": "jest",
-    "test:vitest": "vitest",
-    "dev": "quasar dev",
-    "build": "quasar build",
-    "test": "echo \"See package.json => scripts for available tests.\" && exit 0",
     "test:unit:ui": "majestic",
-    "test:unit": "jest",
     "test:unit:ci": "jest --ci",
     "test:unit:coverage": "jest --coverage",
     "test:unit:watch": "jest --watch",
-    "test:unit:watchAll": "jest --watchAll"
+    "test:unit:watchAll": "jest --watchAll",
+    "test:vitest": "vitest"
   },
   "dependencies": {
     "@highcharts/dashboards": "^2.0.0",
