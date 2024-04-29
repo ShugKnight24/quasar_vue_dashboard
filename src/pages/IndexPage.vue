@@ -1,7 +1,7 @@
 <template>
   <q-layout>
     <q-page-container class="column items-center justify-center width-100">
-      <dashboard-component />
+      <DashboardComponent />
       <example-component active :todos="todos"></example-component>
     </q-page-container>
   </q-layout>

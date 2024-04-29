@@ -1,34 +1,23 @@
 <template>
   <DashboardCard :data="data" class="col-12 col-sm-6 col-md-4" />
   <div class="charts-container column q-gutter-sm items-center justify-center">
-    <apex-charts />
-    <chart-js />
+    <ApexCharts />
+    <ChartJs />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import { useDashboardStore } from '../stores/dashboard';
 // Apex Charts
 import ApexCharts from './Charts/Apex/ApexCharts.vue';
 // Charts.js Charts
 import ChartJs from './Charts/Chartjs/ChartJs.vue';
 import DashboardCard from './DashboardCard.vue';
+import { storeToRefs } from 'pinia';
 
-export default defineComponent({
-  name: 'DashboardView',
-  components: {
-    ApexCharts,
-    ChartJs,
-    DashboardCard,
-  },
-  setup() {
-    const store = useDashboardStore();
-    return { data: store.$state.data };
-  },
-});
+const store = useDashboardStore();
+const { data } = storeToRefs(store);
 </script>
-
 <style lang="scss">
 .dashboard-container {
   margin: 1rem 0;
