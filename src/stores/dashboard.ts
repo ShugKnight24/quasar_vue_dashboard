@@ -1,8 +1,12 @@
 import { defineStore } from 'pinia';
 import { DashboardData } from 'src/components/models';
 
+interface DashboardStore {
+  data: DashboardData[];
+}
+
 export const useDashboardStore = defineStore('dashboard', {
-  state: () => ({
+  state: (): DashboardStore => ({
     data: [
       {
         title: 'Create Layout',
