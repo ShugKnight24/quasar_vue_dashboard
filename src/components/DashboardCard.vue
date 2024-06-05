@@ -28,24 +28,28 @@
         class="text-white text-weight-bold"
       >
         <q-btn
+          v-if="item.completed !== true"
           class="text-weight-bold"
           flat
           label="Set True"
           @click="setCompleted(item, true)"
         />
         <q-btn
+          v-if="item.completed !== false"
           class="text-weight-bold"
           flat
           label="Set False"
           @click="setCompleted(item, false)"
         />
         <q-btn
+          v-if="item.completed !== null"
           class="text-weight-bold"
           flat
           label="Set Null"
           @click="setCompleted(item, null)"
         />
         <q-btn
+          v-if="item.completed !== 'in-progress'"
           class="text-weight-bold"
           flat
           label="Set In-Progress"
