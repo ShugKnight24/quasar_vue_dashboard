@@ -1,28 +1,48 @@
 <template>
-  <div>
-    <h2>AG Grid Table</h2>
+  <div class="grid-container">
+    <h2>AG Grid Car Data Table</h2>
+    <p>This table allows the user to edit each cell independently</p>
+    <p>
+      Click into a cell and start typing, or double click to get a more
+      pronounced input
+    </p>
+    <p>Hitting `Tab` will allow you to move to the next cell</p>
     <ag-grid-vue
       class="ag-theme-material"
-      title="Test AG Grid Table"
+      title="Car Data Grid"
       :columnDefs="columns"
       :rowData="rowData"
-      style="height: 500px; width: 100%"
-    >
-    </ag-grid-vue>
+      :domLayout="'autoHeight'"
+    />
   </div>
 </template>
-
 <script setup lang="ts">
 import { ref } from 'vue';
 import { AgGridVue } from 'ag-grid-vue3';
+
 // TODO: Figure out how to import in the CSS / SCSS side
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 
 const columns = ref([
-  { headerName: 'Make', field: 'make', minWidth: 100 },
-  { headerName: 'Model', field: 'model', minWidth: 100 },
-  { headerName: 'Price', field: 'price', minWidth: 100 },
+  {
+    headerName: 'Make',
+    field: 'make',
+    minWidth: 100,
+    editable: true,
+  },
+  {
+    headerName: 'Model',
+    field: 'model',
+    minWidth: 100,
+    editable: true,
+  },
+  {
+    headerName: 'Price',
+    field: 'price',
+    minWidth: 100,
+    editable: true,
+  },
 ]);
 
 const rowData = ref([
@@ -35,5 +55,6 @@ const rowData = ref([
   { make: 'Ferrari', model: '296 GTS', price: 340000 },
   { make: 'Lamborghini', model: 'Aventador S', price: 425000 },
   { make: 'Porsche', model: 'GT3 RS', price: 241300 },
+  { make: 'Jeep', model: 'Grand Cherokee', price: 23000 },
 ]);
 </script>
