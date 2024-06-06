@@ -13,13 +13,18 @@
       :domLayout="'autoHeight'"
       :rowData="rowData"
     />
+    <!-- :tabToNextCell="tabToNextCell" -->
   </div>
 </template>
 <script setup lang="ts">
 import { onBeforeMount, ref } from 'vue';
 import { AgGridVue } from 'ag-grid-vue3';
-import { GridApi, GridReadyEvent } from 'ag-grid-community';
-import EditRow from './CellComponents/EditRow.vue';
+import {
+  GridApi,
+  GridReadyEvent,
+  // TabToNextCellParams,
+} from 'ag-grid-community';
+import EditSaveRow from './CellComponents/EditSaveRow.vue';
 
 // TODO: Figure out how to import in the CSS / SCSS side
 import 'ag-grid-community/styles/ag-grid.css';
@@ -36,6 +41,14 @@ const gridApi = ref<GridApi>();
 const onGridReady = (params: GridReadyEvent) => {
   gridApi.value = params.api;
 };
+
+// const tabToNextCell = (params: TabToNextCellParams) => {
+//   // if new row, start editing the first cell
+//   // save prior row & toggle is editing
+//   // start editing the first cell of the new row
+//   // trigger isEditing on new row
+//   console.log('tabToNextCell', params);
+// };
 
 const columns = ref([
   {
