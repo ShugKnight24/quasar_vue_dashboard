@@ -4,11 +4,13 @@
       <h1 class="text-h1">AgGrid Page</h1>
       <CarDataGrid />
       <FitnessDataGrid />
+      <ColorsDataGrid />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
 import CarDataGrid from './CarDataGrid.vue';
+import ColorsDataGrid from './ColorsDataGrid.vue';
 import FitnessDataGrid from './FitnessDataGrid.vue';
 </script>
 <style lang="scss" scoped>
